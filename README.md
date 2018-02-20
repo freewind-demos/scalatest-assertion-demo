@@ -1,5 +1,6 @@
-Scala Hello World Demo
-=====================
+
+ScalaTest === Demo
+==================
 
 ```
 sbt test

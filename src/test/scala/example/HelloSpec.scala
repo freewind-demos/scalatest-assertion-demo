@@ -1,11 +1,20 @@
 package example
 
+import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest._
 
-class HelloSpec extends FunSuite with Matchers {
+class HelloSpec extends FunSuite with TypeCheckedTripleEquals {
 
-  test("The Hello object should say hello") {
-    Hello.hello("Scala") shouldEqual "Hello, Scala!"
+  test("string === string") {
+    assert(Hello.hello("Scala") === "Hello, Scala!")
   }
 
+  test("int === int") {
+    assert(1 + 1 === 2)
+  }
+
+  // can't compile
+  //  test("string === int") {
+  //    assert(1 === "abc")
+  //  }
 }
